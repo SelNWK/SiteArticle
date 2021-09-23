@@ -44,6 +44,21 @@
         </div>
     </div>
 
+    <div class="field">
+        <label class="label">Mots Clés</label>
+        <div class="control">
+            <div class="select is-multiple">
+                <select multiple size="<?php $NbKw ?>" id="KeyWord" name="KeyWord">
+                    <?php foreach($keyword as $k): ?>
+                        <option value="<?= $k['KeyWordId'] ?>">
+                            <?= $k['KeywordName'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    </div>
+
     <div class="field is-grouped">
         <div class="control">
             <button type="submit" class="button is-success">Ajouter</button>

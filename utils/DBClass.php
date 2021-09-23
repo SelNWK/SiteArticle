@@ -7,7 +7,7 @@ class DBClass {
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "article";
+    private $database = "blogarticle";
 
     public $connection;
 

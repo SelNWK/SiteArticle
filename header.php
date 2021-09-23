@@ -53,7 +53,7 @@ $keyword = $keywordInstance->selectAll();
                             <div class="navbar-dropdown">
                                 <?php foreach($categories as $key=>$c): ?>
                                     <a class="navbar-item">
-                                        <?= $c ?>
+                                        <?= $c['CategoryName'] ?>
                                     </a>
                                 <?php endforeach; ?>
                             </div>
