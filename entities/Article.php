@@ -27,12 +27,17 @@ class Article {
     }
 
     public function insert(string $title, string $content, string $author, \DateTime $createdAt, string $imageUrl, int $categoryId){
-        $query = "INSERT INTO `article` (`ArticleID`, `TitreArticle`, `ContenuHtml`, `Auteur`, `DateCreation`, `ImageCouverture`, `fk_CategoryId`) ".
-            "VALUES (NULL, '$title', '$content', '$author', '".$createdAt->format('y-m-d h:i:s')."', '$imageUrl', '$categoryId')";
-        echo $query;
-        $stmt = $this->connection->prepare($query);
-        return $stmt->execute();
+    $UID = $bdd -> lastInsertId();
+    $query = "INSERT INTO `article` (`ArticleID`, `TitreArticle`, `ContenuHtml`, `Auteur`, `DateCreation`, `ImageCouverture`, `fk_CategoryId`) ".
+    "VALUES ( '' , '$title', '$content', '$author', '".$createdAt->format('y-m-d')."', '$imageUrl', '$categoryId')";
+    echo $query;
+    $stmt = $this->connection->prepare($query);
+    return $stmt->execute();
     }
+
+    
+    //INSERT INTO `article` (`ArticleID`, `TitreArticle`, `ContenuHtml`, `Auteur`, `DateCreation`, `ImageCouverture`, `fk_CategoryId`) 
+    //VALUES (2, 'Eggdog', 'Lecontenu', 'Nowakowski', '2020-07-11', 'img/unnamed.png', '1')
 
 }
 ?>

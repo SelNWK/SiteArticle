@@ -33,7 +33,7 @@
         <label class="label">Catégorie</label>
         <div class="control">
             <div class="select">
-                <select id="fk_CategoryId" name="fk_CategoryId">
+                <select id="Category" name="Category">
                     <?php foreach($categories as $c): ?>
                         <option value="<?= $c['CategoryID'] ?>">
                             <?= $c['CategoryName'] ?>

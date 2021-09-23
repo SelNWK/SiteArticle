@@ -8,7 +8,7 @@ include_once 'entities/Article.php';
 $connection = (new DBClass())->getConnection();
 $articleInstance = new Article($connection);
 
-$success = $articleInstance->insert($_POST['TitreArticle'], $_POST['ContenuHtml'], $_POST['Auteur'], new \DateTime(), $_POST['ImageCouverture'], $_POST['fk_CategoryId']);
+$success= $articleInstance->insert($_POST['TitreArticle'], $_POST['ContenuHtml'], $_POST['Auteur'], new \DateTime(), $_POST['ImageCouverture'], $_POST['Category']);
 
 if ($success) {
     $_SESSION['message'] = 'Article ajouté dans la base.';

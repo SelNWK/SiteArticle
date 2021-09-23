@@ -5,10 +5,14 @@ session_start();
 include_once 'utils/DBClass.php';
 include_once 'entities/Article.php';
 include_once 'entities/Category.php';
+include_once 'entities/KeyWord.php';
+
 
 $connection = (new DBClass())->getConnection();
 $categoryInstance = new Category($connection);
 $categories = $categoryInstance->selectAll();
+$keywordInstance = new keyword($connection);
+$keyword = $keywordInstance->selectAll();
 
 ?>
 
