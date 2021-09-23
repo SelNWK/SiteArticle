@@ -17,15 +17,12 @@ class Article {
                     //'OR  k.id IS NULL '.
                     'LEFT JOIN category c ON a.fk_CategoryId = c.CategoryID '.
                     'LEFT JOIN keywordarticle ak ON ak.fk_ArticleID = a.ArticleID '.
-                    'LEFT JOIN keyword k ON ak.KeywordArticleId = k.KeyWordId '.
-                    'ORDER BY a.DateCreation DESC';
+                    'LEFT JOIN keyword k ON ak.fk_KeyWordArticleId = k.KeyWordId '.
+                    'ORDER BY a.DateCreation DESC'; 
 
 
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
-
-        //$this->connection->query($query);
-
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
